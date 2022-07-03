@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>yourwebsite.com</title>
+    </head>
+    <style>
+        body {
+            background: #1A1D2B
+        }
+        p {
+            color: #B730CE;
+            font-size: 1.5em;
+            font-family: 'Ariel', sans-serif;
+        }
+    </style>
+    <body onload="getCoin()">
+        <p id="coin">fetching</p>
+        <script>
+            function getCoin() {
+                getText("yourcoinurlhere")
+            }
+            // get text from website
+            function getText(url) {
+                var request = new XMLHttpRequest();
+                request.open('GET', url, true);
+                request.onload = function() {
+                    if (request.status >= 200 && request.status < 400) {
+                        var data = request.responseText;
+                        document.getElementById("coin").innerHTML = data;
+                    } else {
+                        // reached target server, but it returned an error
+                        document.getElementById("coin").innerHTML = "server (their side) error";
+                    }
+                };
+                request.onerror = function() {
+                    // connection error
+                    document.getElementById("coin").innerHTML = "internet (your side) error";
+                };
+                request.send();
+            }
+        </script>
+    </body>
+</html>
+
+<!-- 
+    "The sky is billions of explosions burning far away! 
+    How could you not wanna see them?? 
+    I did. They were pretty cool." 
+-->
+
+<!-- 
+    luka#8375, princess of the moon, www.luka.moe <3
+-->

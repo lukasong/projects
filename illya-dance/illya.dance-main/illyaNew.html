@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lolis go brr</title>
+<!-- <link rel="stylesheet" href="css/hover-min.css"> -->
+<!-- <link rel="stylesheet" href="css/cssshake.min.css"> -->
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.loli {
+    min-width: 100% !important;
+    min-height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.lolibox {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.nololi {
+  /* background-image: linear-gradient(to bottom right, rgba(66,63,156,1), rgba(134,35,89,1)); */
+  background-color: black;
+  z-index: -2;
+}
+
+.getloli {
+  text-align: center;
+  color: black;
+  font-size: 2vw;
+  letter-spacing: 5px;
+  z-index: -1;
+}
+
+.gatewayloli {
+  z-index: 1;
+  height: 25%;
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lukaloli {
+  font-size: 1vw !important;
+  letter-spacing: 5px !important;
+}
+
+/* Attribution: https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css/54702294 */
+.lgbtqloli {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: lgbtqlolianimation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes lgbtqlolianimation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+/* Attribution: https://codepen.io/nohoid/pen/kIfto */
+.lgbtqback {
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800% 1800%;
+  -webkit-animation: lgbtqback 8s ease infinite;
+  -z-animation: lgbtqback 8s ease infinite;
+  -o-animation: lgbtqback 8s ease infinite;
+  animation: lgbtqback 8s ease infinite;
+}
+
+@-webkit-keyframes lgbtqback {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes lgbtqback {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes lgbtqback {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes lgbtqback {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+</style>
+</head>
+<body>
+
+<div id="playOn" style="display:none;" onclick="funcToggleLoli()">
+  <img src="https://i.imgur.com/XFrWeSW.gif" class="loli">
+  <audio id="lolisounds">
+     <source src="pr.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div id="playOff" style="display:block;">
+  <!-- note to self: there are issues with placement + hover/shake -->
+  <div class="loli nololi"></div>
+  <div class="lolibox">
+      <p class="getloli lgbtqloli" onclick="funcPoofGatewayToExistance()">click me2dance</p>
+      <p class="getloli lukaloli lgbtqloli">luka luvs u</p>
+      <p class="getloli lukaloli lgbtqloli"><i>(warning: flashing colors!!)</i></p>
+  </div>
+</div>
+
+<div id="playInter" style="display:none;">
+  <div class="loli nololi lgbtqback"></div>
+  <div class="lolibox">
+    <img src="https://i.imgur.com/hRm9CtB.png" class="gatewayloli" onclick="funcPoofLoliToExistance()">
+    <p class="getloli lukaloli">you hear a lot of noise.</p>
+    <!-- <p class="getloli lukaloli">colors flash. two voices call your name.</p> -->
+    <p class="getloli lukaloli">perhaps, you should.. enter?</p>
+  </div>
+  <audio id="lolisoundsmuffled">
+     <source src="prmf.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+function funcPoofGatewayToExistance() {
+  var varPlayOn = document.getElementById("playInter");
+  var varPlayOff = document.getElementById("playOff");
+  var varPlayAudio = document.getElementById("lolisoundsmuffled");
+  varPlayOn.style.display = "block";
+  varPlayOff.style.display = "none";
+  varPlayAudio.loop = true;
+  varPlayAudio.play();
+}
+
+function funcPoofLoliToExistance() {
+  var varPlayOn = document.getElementById("playOn");
+  var varPlayOff = document.getElementById("playInter");
+  var varPlayAudio = document.getElementById("lolisounds");
+  var varPlayAudioOld = document.getElementById("lolisoundsmuffled");
+  varPlayOn.style.display = "block";
+  varPlayOff.style.display = "none";
+  varPlayAudioOld.pause();
+  varPlayAudio.currentTime = varPlayAudioOld.currentTime;
+  varPlayAudio.loop = true;
+  varPlayAudio.play();
+}
+</script>
+
+</body>
+</html>

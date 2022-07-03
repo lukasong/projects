@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<html>
+<!-- ACKNOWLEDGEMENTS (I plan on a better place ON THE ACTUAL website to put this soon) -->
+<!--
+Custom Emoji Under Header: https://twemoji.twitter.com/ Twemoji by Twitter
+Clipboard Manager: https://clipboardjs.com/ clipboard.js by Zeno Rocha
+Animations: https://wowjs.uk/ Wow.js
+Hover Animations: https://ianlunn.github.io/Hover/ hover.css
+-->
+
+<head>
+  <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>say hi :)</title>
+  <!--<link href="http://www.luka.moe/images/FaviNade.png" rel="icon">-->
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://rawgit.com/ellekasai/twemoji-awesome/gh-pages/twemoji-awesome.css">
+  <link rel="stylesheet" href="css/shake.min.css?v=1">
+  <link rel="stylesheet" href="css/plugins.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/load.css?v=2">
+  <link rel="stylesheet" href="css/hover.min.css?v=1">
+  <!-- css -->
+  <style>
+    body {
+      background-color: "#121212";
+    }
+
+    .titletext {
+      color: white;
+      font-size: 200%;
+    }
+
+    .subtitletext {
+      color: white;
+      font-size: 150%;
+    }
+
+    .undertext {
+      color: white;
+      font-size: 125%;
+    }
+
+    .subsubtitletext {
+      color: white;
+      font-size: 90%;
+    }
+
+    .skinnyurls {
+      border-bottom: 0.1vw solid;
+      border-bottom-color: white;
+      /* background-color: #e8e8e8; */
+    }
+
+    input[type=text] {
+      height: 30px;
+      width: 50%;
+      position: relative;
+      border: 1px solid #000;
+      border-color: rgba(0, 0, 0, .75);
+      background-color: #e8e8e8;
+      font-size: 16px;
+    }
+
+    p[type=textFaux] {
+      height: 30px;
+      width: 50%;
+      padding-left: 0.15%;
+      padding-right: 0.15%;
+      position: relative;
+      border: 1px solid #000;
+      border-color: rgba(0, 0, 0, .75);
+      background-color: #e8e8e8;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 1);
+      word-wrap: break-word;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    .buttoncontainer {
+      padding-top: 0.5%;
+    }
+
+    #copyme {
+      background-color: #9B255F;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 100%;
+      cursor: pointer;
+    }
+
+    #postcontainer {
+      padding-top: 0.5%;
+      padding-bottom: 2%;
+    }
+
+    #postheader {
+      padding-top: 2%;
+    }
+
+    .postitself {
+      word-wrap: break-word;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    img.emoji {
+      height: 1em;
+      width: 1em;
+      margin: 0 .05em 0 .1em;
+      vertical-align: -0.1em;
+    }
+  </style>
+
+</head>
+
+
+<!-- html -->
+
+<body>
+
+  <!--PreLoader-->
+  <div class="loader newloader">
+  </div>
+  <!--PreLoader Ends-->
+
+  <div style="display: block" id="wholething">
+    <section class="single-items center-block center-block clean-background full-screen">
+      <div class="text-center wow fadeInUp" data-wow-delay="250ms">
+        <p style="color:white;">
+          <a class="titletext hvr-grow">leave a message :)</a>
+          <br>
+          <a class="subtitletext hvr-skew">😊👋 say hi, ✏️🛸 write a story, 👺😳 or copy/paste a meme</a> <!-- 😊👋 say hi, ✏️🛸 write a story, 👺😂 or just put a meme  say hi 😊👋, write a story ✏️🛸, or just put a meme 👺😂-->
+          <br>
+          <a class="undertext hvr-skew">or.. just put whatever you want 🥰🥳</a>
+        </p>
+      </div>
+      <input class="wow fadeInUp" data-wow-delay="500ms" maxlength="300" type="text" id="ToPost" name="ToPost" placeholder="Let's write the next thesis on quantum entanglement (◕ ◡ ◕)">
+      <br>
+      <div class="buttoncontainer">
+        <input type="button" class="btn wow fadeInUp hvr-grow" data-wow-delay="500ms" id="copyme" value="share your genius ヾ(〃^∇^)ﾉ" onclick="updateSendData()">
+      </div>
+      <a class="subsubtitletext buttoncontainer hvr-grow wow fadeInUp" data-wow-delay="600ms">this message will be posted to the public</a>
+      <br>
+      <a class="subsubtitletext hvr-grow wow fadeInUp" data-wow-delay="600ms">please be appropriate and dont post any personal information</a>
+      <br>
+      <a class="subsubtitletext hvr-grow wow fadeInUp" data-wow-delay="600ms">v(=∩_∩=)ﾌ</a>
+      <a class="undertext wow fadeInUp hvr-bounce-in" data-wow-delay="600ms" id="postheader">🧐 here's the current message:</a>
+      <div id="postcontainer">
+        <a class="undertext wow fadeInUp postitself hvr-skew" data-wow-delay="600ms" id="currentMessage">🥺there was an issue grabbing the latest message.. feel free to contact me @ luka#8375 on Discord</a>
+      </div>
+    </section>
+    <section>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 text-center fixed-bottom">
+          <p class="copyrights wow fadeInUp" data-wow-delay="750ms">
+            <a class="hvr-grow" id="explanation">leave is a social experiment where you determine what's on the site.</a>
+            <br>
+            <a class="hvr-grow" id="explanation">post something if you want, or refresh to see what others are posting! (refresh if you are having trouble seeing your message) uwu</a>
+            <br>
+            <a class="hvr-shrink" id="totalMessages">total messages sent: </a>
+            <img src="http://www.luka.moe/images/heart.png" width="20" height="20">
+            <a class="hvr-shrink" id="latestDate">latest message sent on:</a>
+            <img src="http://www.luka.moe/images/heart.png" width="20" height="20">
+            <a class="hvr-shrink" id="latestCountry">last country:</a>
+            <br>
+            <a class="skinnyurls hvr-pulse" href="https://github.com/lukasong/emojimorse">view on github</a>
+            <img src="http://www.luka.moe/images/heart.png" width="20" height="20">
+            <a class="hvr-wobble-horizontal">&copy;2019 lukasong (luka#8375)</a>
+            <img src="http://www.luka.moe/images/heart.png" width="20" height="20">
+            <a class="skinnyurls hvr-pulse" href="http://www.luka.moe">check my site</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- Scripts -->
+
+  <script>
+    //forcing twemoji -> windows and apple emojis are meh :)
+    twemoji.parse(document.body);
+    var latestMessageData = null;
+    var latestCountData = 0;
+    var latestDateData = null;
+    var geoJSON = null;
+    var latestCountryData = "🥺 im not so sure..";
+
+    function updateSendData() {
+      if (updateBadwords(document.querySelector("#ToPost").value)) {
+        console.log("oop");
+        document.querySelector("#wholething").classList.add("shake-slow"); //share your genius ヾ(〃^∇^)ﾉ
+        document.querySelector("#wholething").classList.add("shake-constant");
+        document.querySelector("#copyme").value = "dont use bad words!! ╚(•⌂•)╝";
+        setTimeout(function() {
+          document.querySelector("#wholething").classList.remove("shake-slow");
+          document.querySelector("#wholething").classList.remove("shake-constant");
+          document.querySelector("#copyme").value = "share your genius ヾ(〃^∇^)ﾉ";
+        }, 5000);
+      } else {
+        $.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
+          geoJSON = (JSON.stringify(data, null, 2));
+        });
+        try {
+          latestCountryData = geoJSON.substring(geoJSON.indexOf("geobytescountry") + 19);
+          latestCountryData = latestCountryData.substring(0, latestCountryData.indexOf(",") - 1);
+        } catch (error) {
+          latestCountryData = "🥺im not so sure..";
+          console.log(error);
+        }
+        latestCountData = latestCountData + 1;
+        latestDateData = new Date();
+        latestMessageData = (document.querySelector("#ToPost").value);
+        updateServer();
+      }
+    }
+
+    function updateServer() {
+      try {
+        console.log("[lukalog] Posting to to PHP...");
+        $.post('CreateDate.php', {
+          latestDate: latestDateData,
+          latestCount: latestCountData,
+          latestMessage: latestMessageData,
+          userIdentification: geoJSON,
+          latestCountry: latestCountryData
+        }, function(returnedData) {
+          console.log(returnedData);
+        });
+        console.log("[lukalog] Post successful :)");
+      } catch (error) {
+        console.log("[lukalog] There was an issue posting!");
+      }
+      updateClient();
+    }
+
+    function updateBadwords(toFilter) {
+      //NOTE: This is a BAD WORD FILTER. None of these words are words I would/will/do regularly use.
+      //NOTE: I want to prevent users on my website from seeing any of them. Please keep that in mind.catch
+      //NOTE: None of these words reflect me or my vernacular at all. Thank you :)
+      var raceCombo = "n" + "i" + "g"; //why would anyone say any of these? these are awful..
+      var raceComboW = "w" + "i" + "g";
+      console.log("oop2");
+      if (
+        toFilter.includes("shit") ||
+        toFilter.includes("ass") ||
+        toFilter.includes("bitch") ||
+        toFilter.includes("stfu") ||
+        toFilter.includes("kys") ||
+        toFilter.includes("retard") ||
+        toFilter.includes("cunt") ||
+        toFilter.includes("dick") ||
+        toFilter.includes(raceCombo) ||
+        toFilter.includes(raceComboW) ||
+        toFilter.includes("pussy") ||
+        toFilter.includes("fuck") ||
+        toFilter.includes("fuk") ||
+        toFilter.includes("fuc") ||
+        toFilter.includes("anus") ||
+        toFilter.includes("bastard") ||
+        toFilter.includes("shit") ||
+        toFilter.includes("abo") ||
+        toFilter.includes("abbo") ||
+        toFilter.includes("hitler") ||
+        toFilter.includes("porn") ||
+        toFilter.includes("piss") ||
+        toFilter.includes("whore") ||
+        toFilter.includes("slut") ||
+        toFilter.includes("sex")
+      ) {
+        return true; //bad words detected
+      } else {
+        return false; //no bad words detected
+      }
+    }
+  </script>
+
+  <script>
+  </script>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery-3.1.1.min.js"></script>
+
+  <!--Bootstrap Core-->
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <!--to view items on reach-->
+  <script src="js/jquery.appear.js"></script>
+
+  <!--Equal-Heights-->
+  <script src="js/jquery.matchHeight-min.js"></script>
+
+
+  <!--number counters-->
+  <script src="js/jquery-countTo.js"></script>
+
+  <!--Parallax Background-->
+  <script src="js/parallaxie.js"></script>
+
+
+  <script src="js/typewriter.js"></script>
+
+
+  <!--WOw animations-->
+  <script src="js/wow.min.js"></script>
+
+
+
+  <script>
+    document.body.style.backgroundColor = "#1f1f1f";
+    updateClient();
+    function updateClient() {
+      document.querySelector("#ToPost").value = "";
+      $.get("http://luka.moe/projects/LeaveDataCount.txt", function(data) {
+        latestCountData = parseInt(data, 10);
+        console.log("[lukalog] Message count data extracted and parsed successfully!");
+        document.querySelector("#totalMessages").innerHTML = "total messages sent: " + data;
+      });
+      $.get("http://luka.moe/projects/LeaveDataDate.txt", function(data) {
+        document.querySelector("#latestDate").innerHTML = "last message sent on: " + data;
+      });
+      $.get("http://luka.moe/projects/LeaveDataMessage.txt", function(data) {
+        document.querySelector("#currentMessage").innerHTML = "&ldquo;" + data + "&rdquo;";
+      });
+      $.get("http://luka.moe/projects/LeaveDataCountry.txt", function(data) {
+        document.querySelector("#latestCountry").innerHTML = "last country: " + data;
+      });
+    }
+  </script>
+  <script src="js/functions.js?v=2"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lolis go brr</title>
+<!-- <link rel="stylesheet" href="css/hover-min.css"> -->
+<!-- <link rel="stylesheet" href="css/cssshake.min.css"> -->
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.loli {
+    min-width: 100% !important;
+    min-height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.lolibox {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.nololi {
+  /* background-image: linear-gradient(to bottom right, rgba(66,63,156,1), rgba(134,35,89,1)); */
+  background-color: black;
+  z-index: -2;
+}
+
+.getloli {
+  text-align: center;
+  color: black;
+  font-size: 2vw;
+  letter-spacing: 5px;
+  z-index: -1;
+}
+
+.lukaloli {
+  font-size: 1vw !important;
+  letter-spacing: 5px !important;
+}
+
+.lgbtqloli {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: lgbtqlolianimation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes lgbtqlolianimation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div id="playOn" style="display:none;" onclick="funcToggleLoli()">
+  <img src="https://media3.giphy.com/media/vTqhQldEfAY6c/200.gif" class="loli">
+  <audio id="lolisounds">
+     <source src="TRUEFRIEND.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div id="playOff" style="display:block;">
+  <!-- note to self: there are issues with placement + hover/shake -->
+  <div class="loli nololi"></div>
+  <div class="lolibox">
+      <p class="getloli lgbtqloli" onclick="funcPoofLoliToExistance()">click me2dance</p>
+      <p class="getloli lukaloli lgbtqloli">luka says <3</p>
+  </div>
+</div>
+
+<script>
+function funcPoofLoliToExistance() {
+  var varPlayOn = document.getElementById("playOn");
+  var varPlayOff = document.getElementById("playOff");
+  var varPlayAudio = document.getElementById("lolisounds");
+  varPlayOn.style.display = "block";
+  varPlayOff.style.display = "none";
+  varPlayAudio.loop = true;
+  varPlayAudio.play();
+}
+</script>
+
+</body>
+</html>

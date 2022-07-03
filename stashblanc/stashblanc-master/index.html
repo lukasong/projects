@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>stash blanc.</title>
+	<!--<link href="http://www.luka.moe/images/FaviNade.png" rel="icon">-->
+	<link rel="stylesheet" href="css/plugins.css?v=3">
+	<link rel="stylesheet" href="css/style.css?v=2">
+	<link rel="stylesheet" href="css/load.css?v=2">
+	<!-- css -->
+	<style>
+		/* fonts */
+		@font-face {
+			font-family: exo;
+			src: url('fonts/exo.otf');
+		}
+
+		@font-face {
+			font-family: exo-light;
+			src: url('fonts/exo-light.otf');
+		}
+
+		@font-face {
+			font-family: exo-bold;
+			src: url('fonts/exo-bold.otf');
+		}
+
+
+		/* background */
+		body {
+			background-image: url("http://starkart.org/wp-content/gallery/e-l-y-s-i-u-m/uhuih.gif");
+			background-repeat: repeat;
+			background-size: 300px;
+			background-color: "#FFF";
+		}
+
+
+
+		/* text css */
+
+		#timer {
+			font-family: exo;
+			color: black;
+			width: auto;
+			/* Making auto-sizable width */
+			height: auto;
+			/* Making auto-sizable height */
+			padding: 5px 30px 5px 30px;
+			/* Making space around letters */
+			font-size: 18px;
+			position: absolute;
+			z-index: 9999;
+			background-color: #000;
+			/* Changing background color */
+			font-weight: bold;
+		}
+
+		#startvibing {
+			font-family: exo;
+			color: white;
+			width: auto;
+			/* Making auto-sizable width */
+			height: auto;
+			/* Changing background color */
+			font-weight: bold;
+		}
+
+		#activity {
+			font-family: exo;
+		}
+
+		#detailsid {
+			font-family: exo;
+		}
+
+		#detailshoverid {
+			font-family: exo;
+		}
+
+		#explanationText {
+			font-family: exo;
+			/* font-size: 300%; */
+		}
+
+		#startText {
+			font-family: exo;
+			color: white;
+			/* font-size: 300%; */
+		}
+
+		/* end of text css */
+
+		/* over-render */
+		.overrender {
+			position: relative;
+			z-index: 999999999;
+		}
+
+
+		/* backgrounds oop still linear gradients */
+		.clean-background {
+			/*background: linear-gradient(90deg, #ffffff 31%, #ffffff 69%);*/
+			background: linear-gradient(#000000, #000000);
+		}
+
+		.info-background-light {
+			background: linear-gradient(#fefefe, #fefefe);
+		}
+
+		.info-background-dark {
+			background: linear-gradient(#1f1f1f, #1f1f1f);
+		}
+
+
+		.stayOnScreen {
+			width: 80vw;
+			height: auto;
+			word-wrap: break-word;
+			font-size: 2vw;
+		}
+
+		.logoButton {
+			width: 70%;
+			height: auto;
+		}
+
+		.startButton {
+			width: 40%;
+			height: auto;
+		}
+
+		.urls {
+			border-bottom: 0.2vw solid;
+			border-bottom-color: white;
+			/* background-color: #e8e8e8; */
+		}
+
+		.skinnyurls {
+			border-bottom: 0.1vw solid;
+			border-bottom-color: white;
+			/* background-color: #e8e8e8; */
+		}
+
+		.logo {
+			margin-left: auto;
+			margin-right: auto;
+			width: 35%;
+		}
+
+		.vibecheck {
+			opacity: 0.2;
+		}
+
+		.vibecheck:hover {
+			opacity: 1.0;
+		}
+
+		/* opacity change on button hover */
+
+		.optbuttons {
+			opacity: 0.8;
+			width: 4%;
+			height: auto;
+		}
+
+		.optbuttons:hover {
+			opacity: 0.5;
+		}
+
+		.fixed-bottom {
+		   bottom: 0;
+		}
+
+		/* end of activity hovering menu */
+
+
+		img.frontGif {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			height: auto;
+			width: 30%;
+		}
+	</style>
+
+
+
+
+	<!-- javascript -->
+	<script>
+		/* setting up all of the variables */
+		var seconds = 0;
+		var disseconds = null;
+		var minutes = 0;
+		var disminutes = null;
+		var hours = 0;
+		var dishours = null;
+		var time = hours + ":" + minutes + ":" + seconds;
+		var display = "youve been vibing for " + time;
+		var currentTheme = "dark";
+		var vibeWord = "vibing";
+
+		/* the gifs it'll be selecting from */
+		var gifLinks = [
+			'https://thumbs.gfycat.com/WhimsicalEasygoingIridescentshark-max-1mb.gif',
+			'http://starkart.org/wp-content/gallery/e-l-y-s-i-u-m/uhuih.gif',
+			'https://i.gifer.com/VZvx.gif',
+			'https://data.whicdn.com/images/310264593/original.gif',
+			'https://data.whicdn.com/images/221197468/original.gif',
+			'https://data.whicdn.com/images/239471996/original.gif',
+			'http://68.media.tumblr.com/4bd01882ca1df3a02f5940e0ee786292/tumblr_onrdjr4P9r1uf5j8co1_500.gif',
+			'https://data.whicdn.com/images/288008413/original.gif',
+			'https://media3.giphy.com/media/e0B0yDPlci1Ww/source.gif',
+			'https://media.giphy.com/media/PO5FhvTbKynhYQWBHa/giphy.gif',
+			'https://media2.giphy.com/media/57Y7JIqvH9okJCJYjp/giphy.gif',
+			'https://media.giphy.com/media/vvcvtGPa4hSiN4TgeY/giphy.gif',
+			'https://media.giphy.com/media/pylneZCpX0CCsQWSRY/giphy.gif',
+			'https://thumbs.gfycat.com/AggravatingDishonestHind-size_restricted.gif',
+			'https://media0.giphy.com/media/mWxFsNfy0hyylaZ5Pe/source.gif',
+			'https://media.giphy.com/media/Tga4M2zFAbXsmr3dIL/giphy.gif', //unsure bout this one  or one above
+			'https://media.giphy.com/media/Y0jgFTpbIpOmxkBjfw/giphy.gif',
+			'https://media.giphy.com/media/UVA6ZMOvwgpynQvU3e/giphy.gif',
+			'https://media.giphy.com/media/2Wg89Ea84IMmkxMngo/giphy.gif',
+			'https://media.giphy.com/media/2gYhrmp3qxXnGgZ0iq/giphy.gif',
+			'https://66.media.tumblr.com/e2a8fe9f3bf136b172a85e1faa69186b/tumblr_mltqusHrCG1qkjjfoo1_500.gif',
+			'https://media3.giphy.com/media/rLOiKrMn961kA/source.gif',
+			'https://68.media.tumblr.com/fff0475f3653cd6c0119b30318aed324/tumblr_nxik50tPaF1rby04wo1_500.gif',
+			'https://i.pinimg.com/originals/5a/09/c1/5a09c1e50cc9c1259e6fe347efccc17e.gif', //idk about this or one above
+			'https://66.media.tumblr.com/a92dd1deb2dc0b8ea4232609730c3b63/tumblr_oag4gylSpm1s45ba9o1_400.gifv',
+			'https://media3.giphy.com/media/RHSUYI52Dhe7K/source.gif',
+			'https://66.media.tumblr.com/01653cd4c81cac9973aa16723410c862/tumblr_onhbqtbg5c1uf5j8co1_400.gifv',
+			'https://i.pinimg.com/originals/90/41/89/904189f8d5827a502d6cc6fe292843f3.gif',
+			'https://cdn106.picsart.com/205549101002202.gif?r480x480',
+			'https://i.pinimg.com/originals/f1/16/ba/f116ba4a1a480441530144473241bca4.gif',
+			'https://data.whicdn.com/images/295370402/original.gif',
+			'https://media1.giphy.com/media/S5r5BTs1Loili/source.gif',
+			'https://data.whicdn.com/images/272461585/original.gif',
+			'https://i.gifer.com/5BuJ.gif',
+			'https://media0.giphy.com/media/d7oaRATqolAIx1vnXJ/source.gif',
+			'https://media.giphy.com/media/39n755AoQgOx8a6KAz/giphy.gif',
+			'https://media1.giphy.com/media/TwvmOA0oatlRu/source.gif',
+			'https://media1.giphy.com/media/hedEPSTdcAiVG/source.gif',
+			'http://giphygifs.s3.amazonaws.com/media/aQF9pjkJNNw8E/giphy.gif',
+			'http://giphygifs.s3.amazonaws.com/media/HXddmN9zxLuHC/giphy_s.gif',
+			'https://media.giphy.com/media/J1FXfdz5RvHWnO9i0M/giphy.gif',
+			'https://data.whicdn.com/images/119311578/original.gif',
+			'http://static.tumblr.com/a64ca95d419bcd5476175bdb83618b6f/p2gjytu/om9mvcfri/tumblr_static_transparent16.gif',
+			'https://thumbs.gfycat.com/UnlinedGratefulLeafcutterant.webp',
+			'https://thumbs.gfycat.com/LegalSimilarGelada.webp',
+			'https://thumbs.gfycat.com/FlippantSinfulGavial.webp',
+			'https://data.whicdn.com/images/190872615/original.gif',
+			'https://thumbs.gfycat.com/HardJointHagfish-size_restricted.gif',
+			'https://youngbluekennels.com/image/56244-full_pink-halloween-gif-png-png-gifs-tumblr-haningtonbrothers-xyz.gif',
+			'https://i.ya-webdesign.com/images/png-dance-gif-8.gif', /* lol */
+			'https://media0.giphy.com/media/2TaChD3gu6PpS/source.gif',
+			'https://media3.giphy.com/media/l41lW4Mjp80FX98eQ/source.gif',
+			'http://giphygifs.s3.amazonaws.com/media/3Izt5Y5FNiHQs/giphy.gif' /* idk */
+		]
+
+		/* generate a random integer */
+		function getRandomInt(max) {
+			return Math.floor(Math.random() * Math.floor(max));
+		}
+
+
+		/*  counting how long you have been serenaded for */
+		function clock() {
+
+			/* updating the time */
+			seconds = seconds + 1;
+			if (seconds >= 60) {
+				minutes = minutes + 1;
+				seconds = 0;
+			}
+			if (minutes >= 60) {
+				hours = hours + 1;
+				minutes = 0;
+			}
+
+			/* formatting the display times */
+			if (seconds < 10) {
+				disseconds = "0" + seconds;
+			} else {
+				disseconds = seconds;
+			}
+
+			if (minutes < 10) {
+				disminutes = "0" + minutes;
+			} else {
+				disminutes = minutes;
+			}
+
+			if (hours < 10) {
+				dishours = "0" + hours;
+			} else {
+				dishours = hours;
+			}
+
+			/* displaying the time */
+			time = dishours + ":" + disminutes + ":" + disseconds;
+			display = "youve been " + vibeWord + " for " + time + "";
+			document.getElementById('clock').textContent = time;
+		}
+
+
+
+
+
+		/* updating the clock + activity every second + check for new mastery */
+		window.setInterval(function() {
+			clock()
+		}, 1000);
+
+		/* updating the gifs every 3 seconds */
+		window.setInterval(function() {
+			setStage();
+		}, 4000);
+	</script>
+
+
+</head>
+
+
+<!-- html -->
+
+<body>
+
+	<!--PreLoader-->
+	<div class="loader newloader">
+	</div>
+	<!--PreLoader Ends-->
+
+
+	<!-- header -->
+	<header class="site-header transparent-sidemenu">
+		<nav class="navbar navbar-expand-lg transparent-bg static-nav">
+			<div class="container">
+				<a class="navbar-brand">
+					<br>
+				</a>
+
+				<div class="collapse navbar-collapse" id="xenav">
+
+				</div>
+			</div>
+
+			<input class="optbuttons wow fadeIn" data-wow-delay="50ms" id="buttonTheme" type="image" src="imgs/MoonWhite.png" onclick="themeButton()" />
+			<input class="optbuttons wow fadeIn" data-wow-delay="50ms" id="buttonShuffle" type="image" src="imgs/ShuffleBlack.png" onclick="setStage()" />
+			<input class="optbuttons wow fadeIn" data-wow-delay="50ms" id="buttonQuestion" type="image" src="imgs/QuestionBlack.png" onclick="explanationButton()" />
+
+			<!-- End side menu -->
+	</header>
+	<!-- header -->
+
+	<!-- the text @ the bottom
+		<p id="timer">You have been enlightened for 00:00:00</p>-->
+
+
+	<div id="mainPlayer">
+
+		<!-- gif player -->
+		<img id="frontGif" class="frontGif wow fadeIn" data-wow-delay="0ms" src="">
+
+		<!-- watermark and info -->
+		<a id="timer" class="wow fadeInUp text-center fixed-bottom vibecheck" data-wow-delay="150ms">
+			youve been
+			<span id="vibeWordTypewriter">loading</span>
+			for
+			<span id="clock">loading</span>
+			// ©2019 <span href="http://www.luka.moe" class="skinnyurls">luka song</span>
+			<img src="http://www.luka.moe/images/heart.png" width="20" height="20">
+		</a>
+
+
+	</div>
+
+	<!-- if i messed up any formatting, revert css and script stuff! didnt change much here in the main file -->
+
+	<!-- start menu -->
+	<div id="startMenu" class="overrender wow" data-wow-delay="0ms" style="display: block">
+		<section class="single-items center-block center-block clean-background full-screen" id="land">
+			<div class=" text-center wow fadeIn" data-wow-delay="250ms">
+				<input class="logoButton wow lightSpeedIn" data-wow-delay="250ms" id="buttonStart" type="image" src="imgs/stashblanccrop.gif" onclick="startExperience()" />
+				<!-- <input class="startButton" id="buttonStart" type="image" src="imgs/ShuffleWhite.png" onclick="startExperience()" /> -->
+				<p id="startText" class="stayOnScreen vapor-text"><br>click to start <span id="vibeWordStart">loading</span></p>
+			</div>
+		</section>
+	</div>
+
+
+	<div id="explanationMenu" class="wow fadeIn" data-wow-delay="0ms" style="display: none">
+		<section class="single-items center-block center-block info-background full-screen" id="land">
+			<div class=" text-center wow fadeIn" data-wow-delay="150ms">
+				<img class="logo" src="imgs/stashblanccrop.gif" alt="stashblanc">
+				<p id="explanationText" class="stayOnScreen"><br>stashblanc is an artistic visualization of aesthetic 'randomness'.
+					two gifs, sourced from <a class="urls" href="https://giphy.com/">gyphy</a>, are chosen every four seconds and put together to
+					<a class="urls" href="https://www.youtube.com/watch?v=yD2FSwTy2lw">music</a>. the large array of images and fitting soundtrack blend to
+					present a continious set of arbitrary combinations that's easy to get lost in watching - ultimately creating an exploration into the 'art of random'.
+					<br>
+					<br>presented and developed by <a class="urls" href="http://www.luka.moe/">luka song</a>.
+					my project was inspired by <a class="urls" href="http://www.lassekorsgaard.com/">cachemonet</a>.
+					emotional support provided by <a class="urls" href="https://www.youtube.com/watch?v=DrdptDLQ2rA">vivi</a>.
+					<!-- graphics supplied by <a class="urls" href="http://www.luka.moe/">cruel</a>. didnt want name here -->
+					open source and changelog on <a class="urls" href="https://github.com/lukasong/stashblanc">github</a>.
+					<!-- view on my  <a class="urls" href="http://www.luka.moe/">portfolio</a>.-->
+				</p>
+			</div>
+		</section>
+	</div>
+	<div id="fauxExplanationMenu" class="wow fadeOut" data-wow-delay="0ms" style="display: none">
+		<section class="single-items center-block center-block info-background parallaxie full-screen" id="land">
+			<div class=" text-center wow fadeIn" data-wow-delay="150ms">
+				<img class="logo" src="imgs/stashblanccrop.gif" alt="stashblanc">
+				<p id="explanationText" class="stayOnScreen"><br>stashblanc is an artistic visualization of aesthetic 'randomness'.
+					two gifs, sourced from <a class="urls" href="https://giphy.com/">gyphy</a>, are chosen every four seconds and put together to
+					<a class="urls" href="https://www.youtube.com/watch?v=yD2FSwTy2lw">music</a>. the large array of images and fitting soundtrack blend to
+					present a continious set of arbitrary combinations that's easy to get lost in watching - ultimately creating an exploration into the 'art of random'.
+					<br>
+					<br>presented and developed by <a class="urls" href="http://www.luka.moe/">luka song</a>.
+					my project was inspired by <a class="urls" href="http://www.lassekorsgaard.com/">cachemonet</a>.
+					emotional support provided by <a class="urls" href="https://www.youtube.com/watch?v=DrdptDLQ2rA">vivi</a>.
+					<!-- graphics supplied by <a class="urls" href="http://www.luka.moe/">cruel</a>. didnt want name here -->
+					open source and changelog on <a class="urls" href="http://www.luka.moe/">github</a>.
+					<!-- view on my  <a class="urls" href="http://www.luka.moe/">portfolio</a>.-->
+				</p>
+			</div>
+		</section>
+	</div>
+
+
+	<!-- buttons
+		<input  class="optbuttons" id="backswitch" type="image" src="imgs/pencil.png" onclick="backswitcher()"/>
+	  <input  class="optbuttons" id="themeswitch" type="image" src="imgs/theme.png" onclick="themeswitcher()"/>-->
+
+
+
+
+
+	<!-- Scripts -->
+
+	<script>
+		/* settings up clicks */
+
+		function testMobile() {
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+				return 1; /* mobile */
+			} else {
+				return 0; /* not mobile */
+			}
+		}
+
+		function startExperience() {
+			document.getElementById("startMenu").classList.add("fadeOut");
+			backgroundMusic();
+			setStage();
+			setTimeout(() => {
+				document.getElementById("startMenu").style.display = "none";
+			}, 1000);
+		}
+
+		function themeButton() {
+			if (currentTheme == "dark") {
+				swapThemes("light");
+				currentTheme = "light";
+			} else {
+				swapThemes("dark");
+				currentTheme = "dark";
+			}
+		}
+
+		function backgroundMusic() {
+			var backgroundAudio = null;
+			if (testMobile() == 1) {
+				backgroundAudio = new Audio('audio/hat_remix_mobile.mp3');
+			} else {
+				backgroundAudio = new Audio('audio/hat_remix.ogg');
+			}
+			backgroundAudio.load();
+			backgroundAudio.play();
+			backgroundAudio.loop = true;
+		}
+
+
+		/* switching */
+		function swapGifs() {
+			var backGif = gifLinks[getRandomInt(gifLinks.length)];
+			document.body.style.background = "url('" + backGif + "')";
+			document.body.style.backgroundSize = "300px";
+			document.body.style.backgroundRepeat = "repeat";
+			var frontGif = gifLinks[getRandomInt(gifLinks.length)];
+			while (frontGif == backGif) {
+				frontGif = gifLinks[getRandomInt(gifLinks.length)];
+			}
+			document.getElementById('frontGif').src = frontGif;
+		}
+
+		function swapThemes(newSetting) {
+			//setting values
+			if (newSetting == "dark") {
+				document.body.style.backgroundColor = "#1f1f1f";
+				document.getElementById("timer").style.color = "#d8d8d8";
+				document.getElementById("buttonShuffle").src = "imgs/ShuffleWhite.png";
+				document.getElementById("buttonQuestion").src = "imgs/QuestionWhite.png";
+				document.getElementById("buttonTheme").src = "imgs/MoonWhite.png";
+				document.getElementById("explanationMenu").classList.remove("info-background-light");
+				document.getElementById("fauxExplanationMenu").classList.remove("info-background-light");
+				document.getElementById("explanationMenu").classList.add("info-background-dark");
+				document.getElementById("fauxExplanationMenu").classList.add("info-background-dark");
+				document.getElementById("explanationMenu").style.borderBottomcClor = "white";
+			} else if (newSetting == "light") {
+				document.body.style.backgroundColor = "#fefefe";
+				document.getElementById("timer").style.color = "#1f1f1f";
+				document.getElementById("buttonShuffle").src = "imgs/ShuffleBlack.png";
+				document.getElementById("buttonQuestion").src = "imgs/QuestionBlack.png";
+				document.getElementById("buttonTheme").src = "imgs/SunBlack.png";
+				document.getElementById("explanationMenu").classList.remove("info-background-dark");
+				document.getElementById("fauxExplanationMenu").classList.remove("info-background-dark");
+				document.getElementById("explanationMenu").classList.add("info-background-light");
+				document.getElementById("fauxExplanationMenu").classList.add("info-background-light");
+				document.getElementById("explanationMenu").style.borderBottomColor = "black";
+			}
+		}
+
+		function setStage() {
+			swapGifs();
+			swapThemes(currentTheme);
+		}
+		setStage();
+
+		/* toggling between explanation menu and main player */
+		function explanationButton() {
+			var mainPlayer = document.getElementById("mainPlayer");
+			var explanationMenu = document.getElementById("explanationMenu");
+			if (mainPlayer.style.display === "none") {
+				document.getElementById("fauxExplanationMenu").classList.add("fadeOut");
+				document.getElementById("explanationMenu").classList.add("fadeIn");
+				mainPlayer.style.display = "block";
+				explanationMenu.style.display = "none";
+				fauxExplanationMenu.style.display = "block";
+				setTimeout(() => {
+					fauxExplanationMenu.style.display = "none";
+				}, 1000);
+			} else {
+				document.getElementById("explanationMenu").classList.add("fadeIn");
+				document.getElementById("fauxExplanationMenu").classList.remove("fadeOut");
+				mainPlayer.style.display = "none";
+				explanationMenu.style.display = "block";
+				fauxExplanationMenu.style.display = "none";
+			}
+		}
+
+	</script>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.1.1.min.js"></script>
+
+	<!--Bootstrap Core-->
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<!--to view items on reach-->
+	<script src="js/jquery.appear.js"></script>
+
+	<!--Equal-Heights-->
+	<script src="js/jquery.matchHeight-min.js"></script>
+
+
+	<!--number counters-->
+	<script src="js/jquery-countTo.js"></script>
+
+	<!--Parallax Background-->
+	<script src="js/parallaxie.js"></script>
+
+
+	<script src="js/typewriter.js"></script>
+
+
+	<!--WOw animations-->
+	<script src="js/wow.min.js"></script>
+
+
+	<script>
+	if ($("#vibeWordTypewriter").length) {
+		 var app = document.getElementById("vibeWordTypewriter");
+		 var typewriter = new Typewriter(app, {
+				loop: true
+		 });
+		 typewriter.typeString('vibing').pauseFor(4000).deleteAll()
+				.typeString('relaxing').pauseFor(4000).deleteAll()
+				.typeString('zoning out').pauseFor(4000).deleteAll()
+				.typeString('staring').pauseFor(4000).deleteAll()
+				.typeString('chilling').pauseFor(4000).deleteAll()
+				.typeString('contemplating life').pauseFor(4000).deleteAll()
+				.typeString('embracing the void').pauseFor(4000).deleteAll()
+				.typeString('experiencing nothingness').pauseFor(4000).deleteAll()
+				.typeString('living virtually').pauseFor(4000).deleteAll()
+				.typeString('uploading your conscience').pauseFor(4000).deleteAll()
+				.typeString('entering cyberpunk').pauseFor(4000).deleteAll()
+				.typeString('recharging your brain').pauseFor(4000).deleteAll()
+				.typeString('moving to the web').pauseFor(4000).deleteAll()
+				.typeString('reflecting existance').pauseFor(4000).deleteAll()
+				.typeString('experiencing').start();
+	}
+	if ($("#vibeWordStart").length) {
+		 var app = document.getElementById("vibeWordStart");
+		 var typewriter = new Typewriter(app, {
+				loop: true
+		 });
+		 typewriter.typeString('vibing').pauseFor(4000).deleteAll()
+				.typeString('relaxing').pauseFor(4000).deleteAll()
+				.typeString('zoning out').pauseFor(4000).deleteAll()
+				.typeString('staring').pauseFor(4000).deleteAll()
+				.typeString('chilling').pauseFor(4000).deleteAll()
+				.typeString('contemplating life').pauseFor(4000).deleteAll()
+				.typeString('embracing the void').pauseFor(4000).deleteAll()
+				.typeString('experiencing nothingness').pauseFor(4000).deleteAll()
+				.typeString('living virtually').pauseFor(4000).deleteAll()
+				.typeString('uploading your conscience').pauseFor(4000).deleteAll()
+				.typeString('entering cyberpunk').pauseFor(4000).deleteAll()
+				.typeString('recharging your brain').pauseFor(4000).deleteAll()
+				.typeString('moving to the web').pauseFor(4000).deleteAll()
+				.typeString('reflecting existance').pauseFor(4000).deleteAll()
+				.typeString('experiencing').start();
+	}
+	</script>
+	<script src="js/functions.js?v=2"></script>
+</body>
+
+</html>

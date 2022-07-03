@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<html>
+<!-- ACKNOWLEDGEMENTS (I plan on a better place ON THE ACTUAL website to put this soon) -->
+<!--
+Custom Emoji Under Header: https://twemoji.twitter.com/ Twemoji by Twitter
+Clipboard Manager: https://clipboardjs.com/ clipboard.js by Zeno Rocha
+Animations: https://wowjs.uk/ Wow.js
+Hover Animations: https://ianlunn.github.io/Hover/ hover.css
+-->
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>trans me uwu</title>
+	<!--<link href="http://www.luka.moe/images/FaviNade.png" rel="icon">-->
+
+	<script src="js/clipboard.min.js"></script>
+	<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://rawgit.com/ellekasai/twemoji-awesome/gh-pages/twemoji-awesome.css">
+	<link rel="stylesheet" href="css/plugins.css?v=3">
+	<link rel="stylesheet" href="css/style.css?v=2">
+	<link rel="stylesheet" href="css/load.css?v=2">
+	<link rel="stylesheet" href="css/hover.min.css?v=1">
+	<!-- css -->
+	<style>
+		@font-face {
+			font-family: exo;
+			src: url('fonts/exo.otf');
+		}
+
+		@font-face {
+			font-family: exo-light;
+			src: url('fonts/exo-light.otf');
+		}
+
+		@font-face {
+			font-family: exo-bold;
+			src: url('fonts/exo-bold.otf');
+		}
+
+		body {
+			background-color: "#121212";
+		}
+
+		.titletext {
+			color: white;
+			font-size: 200%;
+		}
+
+		.subtitletext {
+			color: white;
+			font-size: 150%;
+		}
+
+    .subsubtitletext {
+      color: white;
+      font-size: 90%;
+    }
+
+		.skinnyurls {
+			border-bottom: 0.1vw solid;
+			border-bottom-color: white;
+			/* background-color: #e8e8e8; */
+		}
+
+		input[type=text] {
+			height: 30px;
+			width: 50%;
+			position: relative;
+			border: 1px solid #000;
+			border-color: rgba(0, 0, 0, .75);
+			background-color: #e8e8e8;
+			font-size: 16px;
+		}
+
+		p[type=textFaux] {
+			height: 30px;
+			width: 50%;
+			padding-left: 0.15%;
+			padding-right: 0.15%;
+			position: relative;
+			border: 1px solid #000;
+			border-color: rgba(0, 0, 0, .75);
+			background-color: #e8e8e8;
+			font-size: 16px;
+			color: rgba(0, 0, 0, 1);
+			word-wrap: break-word;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+
+		#copyme {
+		  background-color: #9B255F;
+		  border: none;
+			border-radius: 4px;
+		  color: white;
+		  padding: 10px 28px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 100%;
+			cursor: pointer;
+		}
+
+		img.emoji {
+			height: 1em;
+			width: 1em;
+			margin: 0 .05em 0 .1em;
+			vertical-align: -0.1em;
+		}
+	</style>
+
+</head>
+
+
+<!-- html -->
+
+<body>
+
+	<!--PreLoader-->
+	<div class="loader newloader">
+	</div>
+	<!--PreLoader Ends-->
+
+	<div style="display: block">
+		<section class="single-items center-block center-block clean-background full-screen">
+			<div class="text-center wow fadeInUp" data-wow-delay="250ms">
+				<p style="color:white;">
+					<a class="titletext hvr-grow">Emoji Morse Code</a>
+					<br>
+					<a class="subtitletext hvr-skew">😳😳😳 🥺🥺🥺🥺</a> <!-- hi! = 😳😳😳😳😳😳😳😳 😳😳😳😳😳😳😳😳😳 🥺 -->
+				</p>
+			</div>
+			<input class="wow fadeInUp" data-wow-delay="500ms" type="text" id="ToTranslate" name="ToTranslate" placeholder="What shall we translate today uwu">
+			<p class="wow fadeInUp" data-wow-delay="500ms" type="textFaux" id="GetTranslate" name="ToTranslate" placeholder="Your translation will go here owo">Your translation will go here owo</p>
+			<input type="button" class="btn wow fadeInUp hvr-grow" data-wow-delay="500ms" id="copyme" value="copy me (づ｡◕‿‿◕｡)づ" data-clipboard-target="#GetTranslate">
+	     <a class="subsubtitletext hvr-grow wow fadeInUp" data-wow-delay="600ms">this is a two-way translator uwu</a>
+    </section>
+		<section>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 text-center fixed-bottom">
+					<p class="copyrights wow fadeInUp" data-wow-delay="750ms">
+						<a class="skinnyurls hvr-pulse" href="https://github.com/lukasong/emojimorse">view on github</a>
+						<img src="http://www.luka.moe/images/heart.png" width="20" height="20">
+						<a class="hvr-wobble-horizontal">&copy;2019 lukasong (luka#8375)</a>
+						<img src="http://www.luka.moe/images/heart.png" width="20" height="20">
+						<a class="skinnyurls hvr-pulse" href="http://www.luka.moe">check my site</a>
+					</p>
+				</div>
+			</div>
+		</section>
+	</div>
+
+
+	<!-- Scripts -->
+
+	<script>
+		//forcing twemoji -> windows and apple emojis are meh :)
+		twemoji.parse(document.body);
+		//better clipboard manager :)
+		new ClipboardJS('.btn');
+		//constantly updating resuls
+		const $source = document.querySelector('#ToTranslate');
+		const $result = document.querySelector('#GetTranslate');
+		const typeHandler = function(e) {
+			parseDecider();
+		}
+		$source.addEventListener('input', typeHandler)
+	</script>
+
+	<script>
+		var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
+			"P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+		];
+    var lowercase = ["a,", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
+      "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+    ];
+		var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+		var special = ["!", "?", "-", ":", ";", ".", "@", "#", "$", "&", ">", "<", "(", ")", "[", "]"];
+
+		function parseDecider() {
+			document.querySelector("#ToTranslate").value = document.querySelector("#ToTranslate").value.replace(/:flushed:/gi, "😳");
+			document.querySelector("#ToTranslate").value = document.querySelector("#ToTranslate").value.replace(/:woozy_face:/gi, "🥴");
+			document.querySelector("#ToTranslate").value = document.querySelector("#ToTranslate").value.replace(/:grimacing:/gi, "😬");
+			document.querySelector("#ToTranslate").value = document.querySelector("#ToTranslate").value.replace(/:pleading_face:/gi, "🥺");
+      document.querySelector("#ToTranslate").value = document.querySelector("#ToTranslate").value.replace(/:joy:/gi, "😂");
+			if (
+				document.querySelector("#ToTranslate").value.startsWith("😳") ||
+				document.querySelector("#ToTranslate").value.startsWith("🥴") ||
+				document.querySelector("#ToTranslate").value.startsWith("😬") ||
+				document.querySelector("#ToTranslate").value.startsWith("🥺") ||
+        document.querySelector("#ToTranslate").value.startsWith("😂") ) {
+				parseFromFlushed();
+			} else {
+				parseToFlushed();
+			}
+		}
+
+		function parseToFlushed() {
+			var toTranslateText = document.querySelector("#ToTranslate").value;
+			//toTranslateText = toTranslateText.toUpperCase();
+			var toTranslateLength = toTranslateText.length;
+			var getTranslateText = "";
+			for (i = 0; i < toTranslateLength; i++) {
+				var currentCharacter = toTranslateText.substring(i, i + 1);
+				var found = false;
+				//first i'll test for the lowercase alphabet ~ flushed
+				for (a = 0; a < lowercase.length; a++) {
+					if (lowercase[a] == currentCharacter) {
+						for (e = -1; e < a; e++) {
+							getTranslateText += "😳";
+						}
+						getTranslateText += " "
+						found = true;
+						break;
+					}
+				}
+        //next, uppercase alphabet ~ new :) !!! yay
+        for (a = 0; a < alphabet.length; a++) {
+          if (alphabet[a] == currentCharacter) {
+            for (e = -1; e < a; e++) {
+              getTranslateText += "😂";
+            }
+            getTranslateText += " "
+            found = true;
+            break;
+          }
+        }
+				//space? ~ tipsy face i think will work here , if it hasn't already been found ~ optimization
+				if (found == false) {
+					if (" " == currentCharacter) {
+						getTranslateText += "🥴";
+						getTranslateText += " "
+					}
+				}
+				//next i'll test for numebrs, if it hasn't already been found ~ optimization
+				if (found == false) {
+					for (a = 0; a < numbers.length; a++) {
+						if (numbers[a] == currentCharacter) {
+							for (e = -1; e < a; e++) {
+								getTranslateText += "😬";
+							}
+							getTranslateText += " "
+							found = true;
+							break;
+						}
+					}
+				}
+				//next i'll test for special characters, if it hasn't already been found ~ optimization
+				if (found == false) {
+					for (a = 0; a < special.length; a++) {
+						if (special[a] == currentCharacter) {
+							for (e = -1; e < a; e++) {
+								getTranslateText += "🥺";
+							}
+							getTranslateText += " "
+							found = true;
+							break;
+						}
+					}
+				}
+			}
+			document.querySelector("#GetTranslate").innerHTML = getTranslateText;
+			//return getTranslateText;
+		}
+
+		function parseFromFlushed() {
+			var toTranslateText = document.querySelector("#ToTranslate").value;
+			toTranslateText = toTranslateText.toUpperCase();
+			var toTranslateLength = toTranslateText.length;
+			var getTranslateText = "";
+			var charByCharReader = toTranslateText.split(" ");
+			//console.log(charByCharReader.toString());
+			for (i = 0; i < charByCharReader.length; i++) {
+				var thisCharacter = charByCharReader[i];
+				var thisCharacterLength = (thisCharacter.length - 2) / 2;
+				//console.log(thisCharacterLength);
+				if (charByCharReader[i].startsWith("😳")) {
+					getTranslateText += lowercase[thisCharacterLength];
+				} else if (charByCharReader[i].startsWith("😂")) {
+            getTranslateText += alphabet[thisCharacterLength];
+        } else if (charByCharReader[i] === "🥴") {
+					getTranslateText += " ";
+				} else if (charByCharReader[i].startsWith("😬")) {
+					getTranslateText += numbers[thisCharacterLength];
+				} else if (charByCharReader[i].startsWith("🥺")) {
+					getTranslateText += special[thisCharacterLength];
+				}
+			}
+			document.querySelector("#GetTranslate").innerHTML = getTranslateText;
+		}
+	</script>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.1.1.min.js"></script>
+
+	<!--Bootstrap Core-->
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<!--to view items on reach-->
+	<script src="js/jquery.appear.js"></script>
+
+	<!--Equal-Heights-->
+	<script src="js/jquery.matchHeight-min.js"></script>
+
+
+	<!--number counters-->
+	<script src="js/jquery-countTo.js"></script>
+
+	<!--Parallax Background-->
+	<script src="js/parallaxie.js"></script>
+
+
+	<script src="js/typewriter.js"></script>
+
+
+	<!--WOw animations-->
+	<script src="js/wow.min.js"></script>
+
+
+	<script>
+		document.body.style.backgroundColor = "#1f1f1f";
+	</script>
+	<script src="js/functions.js?v=2"></script>
+</body>
+
+</html>
