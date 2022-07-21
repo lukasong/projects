@@ -1,4 +1,4 @@
-﻿Shader "luka/commissions/Windwaker Dome/Bubbles Sphere"
+﻿Shader "luka/commissions/Windwaker Dome/Bubbles Skybox"
 {
     Properties
     {

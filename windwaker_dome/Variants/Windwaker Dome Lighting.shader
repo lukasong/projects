@@ -1,4 +1,4 @@
-﻿Shader "luka/commissions/Windwaker Dome/Bubbles Sphere"
+﻿Shader "luka/commissions/Windwaker Dome/Lighting Skybox"
 {
     Properties
     {
@@ -8,24 +8,12 @@
         _ColorLow ("Low Color", Color) = (0.223529, 0.505882, 0.517647, 1)
         _ColorHigh ("High Color", Color) = (0.117647, 0.294118, 0.396078, 1)
         [PowerSlider(2.0)] _ColorBanding ("Color Bands", Range(0.1, 10)) = 2
-        // noise settings
-        [Space(10)]
-        [Header(Bubble Settings)]
-        [Space(5)]
-        _WaveColor ("Bubble Color", Color) = (0.2284176, 0.5427855, 0.5566037, 1)
-        _WaveScale ("Bubble Scale", Float) = 0.025
-        _WaveSpeed ("Bubble Speed", Float) = 13.9
-        _WaveAmount ("Bubble Amount", Float) = 1.35
-        _WavePower ("Bubble Power", Float) = 0.94
-        _WaveSize ("Bubble Size", Float) = 0.283
-        [Toggle(_TOGGLE_BUBBLE_DISTORTION)] _BubbleDistortion ("Bubble Distortion", Range(0, 1)) = 0
-        _BubbleDistortionSize ("Bubble Distortion Size", Float) = 0.1
-        _BubbleDistortionPower ("Bubble Distortion Power", Float) = 1.5
+
     }
     SubShader {
 
         // rendering settings
-        Tags { "RenderType"="Opaque" "Queue"="Transparent" "PreviewType"="Sphere" }
+        Tags { "RenderType" = "Background" "Queue" = "Background" }
         ZWrite Off
         Cull Off
 
@@ -285,33 +273,6 @@
             // pixel pass
             float4 pixel(v2f i) : COLOR {
                 float4 skyColor = lerp(_ColorLow, _ColorHigh, i.precalc.x); 
-                float softenFactor = saturate(valueRemap((/* 1.0 - */ (abs(i.texcoord.y - 0.5) * 2.0)), 0.6, 0, 0, 1)); // soften the waves by the top and bottom of sphere cos stretching
-                // fade out on edges of x factor too and move this to vertice
-                // skyColor.rgb = lerp(skyColor.rgb, _WaveColor.rgb, softenFactor);
-                i.seed.y -= (_Time.y * _WaveSpeed);
-                i.seed.x *= 2;
-                i.seed.z *= 2;
-                #ifdef _TOGGLE_BUBBLE_DISTORTION
-                    i.seed.y += ((sin(i.seed.x * _BubbleDistortionSize) * _BubbleDistortionPower) + cos(i.seed.z * _BubbleDistortionSize) * _BubbleDistortionPower);
-                #endif 
-                // make the noise more jagged
-                // float noise = PeriodicNoise(i.seed * 0.05, float3(0, 0, 0));
-                float noise = SimplexNoise(i.seed * _WaveScale);
-                noise += SimplexNoise(i.seed * _WaveScale * 0.5) - 0.5;
-                // less waves
-                noise += _WaveAmount;
-                // cut out the centers
-                if (noise > _WaveSize) noise = 0;
-                // remap 0 to 0.4 to 0 to 1
-                float waveFade = valueRemap(noise, 0, 0.4, 0, 1);
-                // now move it from 0->1 to 0->1->0
-                waveFade = 1.0 - (abs(waveFade - 0.5) * 2.0);
-                noise = waveFade;
-                // remap noise from 0.4 to 1.0 to 0.0 to 1.0
-                //noise = valueRemap(noise, 0, 0.4, 0, 1);
-                // skyColor.rgb += _WaveColor.rgb * _WaveAmount * pow(noise, _WavePower) * softenFactor;
-                skyColor.rgb = lerp(skyColor.rgb, _WaveColor.rgb, _WavePower * saturate((noise)));
-
 
                 return skyColor;
             }

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bubbles
+  m_Shader: {fileID: 4800000, guid: 006c5ccf441cc4b2fbbc808421ae06cb, type: 3}
+  m_ShaderKeywords: _KEYWORD_JUNE_ONE_CREATIVITY _TOGGLE_BUBBLE_DISTORTION
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - _BubbleDistortion: 1
+    - _BubbleDistortionPower: 4
+    - _BubbleDistortionSize: 0.08
+    - _ColorBanding: 2
+    - _WaveAmount: 1.4
+    - _WavePower: 1
+    - _WaveScale: 0.004
+    - _WaveSize: 0.2
+    - _WaveSpeed: 40
+    m_Colors:
+    - _ColorHigh: {r: 0.11764697, g: 0.29411796, b: 0.39607796, a: 1}
+    - _ColorLow: {r: 0.22352895, g: 0.505882, b: 0.517647, a: 1}
+    - _WaveColor: {r: 0.22841758, g: 0.54278547, b: 0.5566037, a: 1}
