@@ -3,6 +3,7 @@ Random smol projects that don't warrant their own repo.. probably nothing useful
 
 # what's in it?
 - [Windwaker Dome](https://github.com/lukasong/projects_public/tree/main/windwaker_dome) **(2022)**: simple shader for spheres that emulates the skybox-ish effect of being underwater in Hyrule in Legend of Zelda Windwaker (for Unity)
+- [Mae](https://github.com/lukasong/projects_public/tree/main/mae)] **(2019)**: final two versions of my [very] old [and outdated, and poorly written] post-processing suite for unity/vrchat, replaced by june (www.luka.moe/june)
 - [Coinfetch](https://github.com/lukasong/projects_public/tree/main/coinfetch/coinfetch-main) **(2021)**: a simple javascript website to scrape crypto prices
 - [EmojiMorse](https://github.com/lukasong/projects_public/tree/main/emoji-morse/emojimorse-master) **(2019)**: a website that converts text into emojis and vice-versa
 - [Illya.Dance](https://github.com/lukasong/projects_public/tree/main/illya-dance/illya.dance-main) **(2020)**: a little fun website of fate characters dancing to music
