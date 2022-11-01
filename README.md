@@ -2,7 +2,7 @@
 Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake.
 
 # what's in it?
-- [FPSColor Shader](https://github.com/lukasong/projects_public/tree/main/fpscolor_shader) **(2022)**: smol ezpz shader that calculates fps from shader via deltatime.w and displays a different color based on set limtis
+- [FPSColor Shader](https://github.com/lukasong/projects_public/tree/main/FPSColor_Shader) **(2022)**: smol ezpz shader that calculates fps from shader via deltatime.w and displays a different color based on set limtis
 - [Windwaker Dome](https://github.com/lukasong/projects_public/tree/main/windwaker_dome) **(2022)**: simple shader for spheres that emulates the skybox-ish effect of being underwater in Hyrule in Legend of Zelda Windwaker (for Unity)
 - [Mae](https://github.com/lukasong/projects_public/tree/main/mae) **(2019)**: final two versions of my [very] old [and outdated, and poorly written] post-processing suite for unity/vrchat, mae (also known as luka's mega shader or mega after effects), which has since been replaced by june (www.luka.moe/june)
 - [Coinfetch](https://github.com/lukasong/projects_public/tree/main/coinfetch/coinfetch-main) **(2021)**: a simple javascript website to scrape crypto prices
