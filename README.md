@@ -1,8 +1,5 @@
 # projects (public)
-Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake.
-
-# what's in it?
-well below I sorted them by year.. it's mostly just small shaders or web files
+Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake. mostly random shaders and web files
 
 # 2022 (Junior)
 - [FPSColor Shader](https://github.com/lukasong/projects_public/tree/main/FPSColor_Shader) **(2022)**: smol ezpz shader that calculates fps from shader via deltatime.w and displays a different color based on set limtis
