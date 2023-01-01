@@ -2,6 +2,7 @@
 Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake. mostly random shaders and web files
 
 # 2022 (Junior)
+- [HuggingFace Downloader](https://github.com/lukasong/projects_public/tree/main/huggingface_dl) **(2022)**: dont really do python stuff, but learning it on the side, just wanted to avoid the useless information git clone provides and get ML models right from HuggingFace
 - [FPSColor Shader](https://github.com/lukasong/projects_public/tree/main/FPSColor_Shader) **(2022)**: smol ezpz shader that calculates fps from shader via deltatime.w and displays a different color based on set limtis
 - [Windwaker Dome](https://github.com/lukasong/projects_public/tree/main/windwaker_dome) **(2022)**: simple shader for spheres that emulates the skybox-ish effect of being underwater in Hyrule in Legend of Zelda Windwaker (for Unity)
 
