@@ -1,0 +1,63 @@
+// |=============================|
+// |   moshi moshi jesus desu!   |
+// |=============================|
+current_username=zoey101
+level=1
+gender=f
+country=US
+member_status=true
+monstar=X
+rating=5.0
+referralPoints=0
+views=1
+age=18
+happiness=700
+health=700
+highest_puzzle_score=1
+level=1
+progress=0
+rocks=200
+total_rocks=250
+monster_type=poppet
+b=true
+primary_colour=6
+secondary_colour=6
+custom_colour1=466299
+custom_colour2=8bb0e8
+custom_colour3=d67fff
+
+
+// |=============================|
+// |      NEW GAME CREATOR       |
+// |=============================|
+do_new_game=true
+new_username=zoey101
+initialize_dummy_items=true
+initialize_dummy_room=true
+wipe_moshlings=true
+wipe_items=true
+wipe_gifts=true
+wipe_friends=true
+wipe_comments=true
+
+
+// |=============================|
+// |   EXPERIMENTAL SETTINGS     |
+// |=============================|
+do_experimental=false
+exp_do_garden=true
+exp_garden_progress=71
+exp_garden_nextflower=1574922119048
+exp_difficulty=1
+createdAfterFoodFactoryLaunch=false
+exp_force_id=false
+exp_force_id_value=57924898
+
+
+// |=============================|
+// |   SETTINGS FOR PROGRAM      |
+// |=============================|
+do_custom_settings=false
+profile_template=template_profile.txt
+beautify_xml=false
+
