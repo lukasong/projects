@@ -1,5 +1,5 @@
 # projects (public)
-Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake. mostly random shaders and web files
+Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake. mostly random shaders and web files. for my bigger, "real" projects, check out [this!](http://www.luka.moe/projects)
 
 # 2023 (Junior-Senior)
 - [Moshi Moshi Jesus Desu](https://github.com/lukasong/projects_public/tree/main/MMJD) **(2023)**: small java program (for portability and cross-platform use) to manage Moshi Monster save states on Flashpoint.
