@@ -2,7 +2,7 @@
 Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake. mostly random shaders and web files. for my bigger, "real" projects, check out [this!](http://www.luka.moe/projects)
 
 # 2023 (Junior-Senior)
-- [Moshi Moshi Jesus Desu](https://github.com/lukasong/projects_public/tree/main/MMJD) **(2023)**: small java program (for portability and cross-platform use) to manage Moshi Monster save states on Flashpoint.
+- 
 
 # 2022 (Junior)
 - [HuggingFace Downloader](https://github.com/lukasong/projects_public/tree/main/huggingface_dl) **(2022)**: dont really do python stuff, but learning it on the side, just wanted to avoid the useless information git clone provides and get ML models right from HuggingFace
