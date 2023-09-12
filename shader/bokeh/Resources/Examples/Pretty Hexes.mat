@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pretty Hexes
+  m_Shader: {fileID: 4800000, guid: 7ce561689392d4449a11f896e6a3f8f8, type: 3}
+  m_ShaderKeywords: _BOKEH_ANIMATION _BOKEH_HD
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Guide:
+        m_Texture: {fileID: 2800000, guid: 23cf98233fa4a40088a6f5a2e65e9866, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Accentuate: 0
+    - _Animate: 1
+    - _AnimationRotation: 2
+    - _AnimationRotationSpeed: 0.5
+    - _AnimationScale: 0
+    - _AnimationScaleMaximum: 1
+    - _AnimationScaleMinimum: 2
+    - _AnimationScalePower: 0.5
+    - _AnimationScaleSpeed: 0.5
+    - _AnimationVariation: 1.75
+    - _Aperature: 0.26
+    - _BlendingRadius: 0.0139
+    - _BokehPower: 0.217
+    - _BumpScale: 1
+    - _Clean: 0
+    - _CocSpread: 0.085
+    - _ColorGrading: 0
+    - _ColorMode: 0
+    - _CullDistance: 10
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _Dithering: 5.62
+    - _DstBlend: 0
+    - _Exposure: 1
+    - _FactorDepth: 0
+    - _FactorDepthCutoff: 0.5
+    - _FactorDepthInfluence: 0.65
+    - _FactorLuma: 0
+    - _FactorLumaInfluence: 0.5
+    - _FactorLumaMinimum: 0.15
+    - _FarPlane: 1
+    - _FocalMode: 2
+    - _FocalX: 0.5
+    - _FocalY: 0.5
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _GuideRandomizeSpeed: 0
+    - _GuideRandomizeStyle: 0
+    - _GuideRandomizeVariation: 4
+    - _GuideRandomizeX: 2
+    - _GuideRandomizeY: 2
+    - _HD: 1
+    - _HSVMode: 0
+    - _HSVTapBased: 0
+    - _Hue: 1
+    - _Language: 0
+    - _ManualFocus: 0
+    - _MaxDiameter: 0.0125
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Power: 4.21
+    - _Randomize: 0
+    - _Saturation: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _VRChat: 0
+    - _VRChatPreview: 0
+    - _Value: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
