@@ -2,13 +2,13 @@
 Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake. mostly random shaders and web files. for my bigger, "real" projects, check out [this!](http://www.luka.moe/projects). **Please note that this repository does not account for all of my projects - many of them are are private and not even listed as closed-source.** And hey, thank you for reading and checking it out! c:
 
 # Table of Contents 🍩
-1. [Actively Maintained Projects ⛈️](#actively-maintained-projects-⛈️)
-2. [2023 Projects 🍕](#2023-projects-🍕)
-3. [2022 Projects 🌸](#2022-projects-🌸)
-4. [2021 Projects 🪐](#2021-projects-🪐)
-5. [2020 Projects 🍄](#2020-projects-🍄)
-6. [2019 And Below Projects 🍓](#2019-and-below-projects-🍓)
-7. [Closed-Source (Public) Projects 🍀](#closed-source-public-projects-🍀)
+1. [Actively Maintained Projects ⛈️](#actively-maintained-projects-)
+2. [2023 Projects 🍕](#2023-projects-)
+3. [2022 Projects 🌸](#2022-projects-)
+4. [2021 Projects 🪐](#2021-projects-)
+5. [2020 Projects 🍄](#2020-projects-)
+6. [2019 And Below Projects 🍓](#2019-and-below-projects-)
+7. [Closed-Source (Public) Projects 🍀](#closed-source-public-projects-)
  <br/><br/>
 
 # Actively Maintained Projects ⛈️
@@ -57,4 +57,4 @@ Random smol projects that don't warrant their own repo.. probably nothing useful
 - [Medicine Shader](https://lukasong.gumroad.com/l/medicineshader?layout=profile) **(shader)**: a raymarched shader that simulates raining medicine capsules (experiment, first time raymarching)
 - [Aurora Borealis Shader](https://lukasong.gumroad.com/l/borealis?layout=profile) **(shader)**: a shader that uses a plane and noise on the vertex shader to simulate an aurora borealis
 - [Windwaker Water Shader](https://lukasong.gumroad.com/l/windwaker?layout=profile) **(shader)**: a shader that layers pre-baked noise maps to simulate cartoon water in the style of Zelda Windwaker
-- [luka.moe](http://www.luka.moe) **(web)**: my personal website built with Bootstrap. some of the main pages you can navigate are the [homepage](http://www.luka.moe), the [June Shader page](http://www.luka.moe/june), the [MagicBounce page](http://www.luka.moe/magicbounce), and the [projects page](http://www.luka.moe/projects).
+- [luka.moe](http://www.luka.moe) **(web)**: my personal website built with Bootstrap. some of the main pages you can navigate are the [homepage](http://www.luka.moe), the [June Shader page](http://www.luka.moe/june), the [MagicBounce page](http://www.luka.m  oe/magicbounce), and the [projects page](http://www.luka.moe/projects).
