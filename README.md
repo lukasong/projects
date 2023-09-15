@@ -2,7 +2,7 @@
 Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake. mostly random shaders and web files. for my bigger, "real" projects, check out [this!](http://www.luka.moe/projects). **Please note that this repository does not account for all of my projects - many of them are are private and not even listed as closed-source.** And hey, thank you for reading and checking it out! c:
 
 # Table of Contents 🍩
-1. [Actively Maintained Projects ⛈️](#actively-maintained-projects-)
+1. [Actively Maintained Projects ⛈️](#actively-maintained-projects-%EF%B8%8F)
 2. [2023 Projects 🍕](#2023-projects-)
 3. [2022 Projects 🌸](#2022-projects-)
 4. [2021 Projects 🪐](#2021-projects-)
