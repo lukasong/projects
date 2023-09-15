@@ -12,9 +12,9 @@ Random smol projects that don't warrant their own repo.. probably nothing useful
  <br/><br/>
 
 # Actively Maintained Projects ⛈️
-- [June Post-Processing Suite](http://www.luka.moe/june) **(shader)**: a custom post-processing suite with over 100 effects for VRChat and Unity, a custom UI, a custom shader pre-processor, and more.
+- [June Post-Processing Suite](http://www.luka.moe/june) **(shader)**: a custom post-processing suite with over 100 effects for VRChat and Unity, a custom UI, a custom shader pre-processor, and more. [~500 users as of Aug. 2023]
 - [MagicBounce AI Upscaler](http://www.luka.moe/magicbounce) **(csharp)**: a Unity window that allows you to batch upscale (using machine learning through the Barracuda library), compress, edit, and stylize (also using machine learning models trained on artstyles) textures. 
-- [June Lite Post-Processing Suite](https://www.github.com/lukasong/junelite) **(shader)**: a lightweight version of June with a fewer features in exchange for a more permissive license.
+- [June Lite Post-Processing Suite](https://www.github.com/lukasong/junelite) **(shader)**: a lightweight version of June with a fewer features in exchange for a more permissive license. [~3000 users as of Aug. 2023]
  <br/><br/>
 
 # 2023 Projects 🍕
