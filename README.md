@@ -1,5 +1,5 @@
 # projects (public) 🌈
-Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake. mostly random shaders and web files. for my bigger, "real" projects, check out [this!](http://www.luka.moe/projects). **Please note that this repository does not account for all of my projects - many of them are are private and not even listed as closed-source.** And hey, thank you for reading and checking it out! c:
+Random smol projects that don't warrant their own repo.. probably nothing useful.. just for my own sake. mostly random shaders and web files. for my bigger, "real" projects, check out [this!](http://www.luka.moe/projects). **Please note that this repository does not account for all of my projects - many of them are are private and not even listed as closed-source.** Also for reference, in 2020 and below I was still in highschool so a lot of my earlier code does not reflect better practices that I've learned throughout the years. And hey, thank you for reading and checking it out! c:
 
 # Table of Contents 🍩
 1. [Actively Maintained Projects ⛈️](#actively-maintained-projects-%EF%B8%8F)
